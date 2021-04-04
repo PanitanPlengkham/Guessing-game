@@ -1,0 +1,26 @@
+{% block content %}
+    <div style="display: flex; margin-top: 3rem; margin-bottom: 1rem;">
+        <h2 style="margin-right: 3rem;">{{ static["answer"]["1_ans"] }}</h2>
+        <h2 style="margin-right: 3rem;">{{ static["answer"]["2_ans"] }}</h2>
+        <h2 style="margin-right: 3rem;">{{ static["answer"]["3_ans"] }}</h2>
+        <h2 style="margin-right: 3rem;">{{ static["answer"]["4_ans"] }}</h2>
+    </div>
+    <div style="display: flex; margin-top: 3rem;">
+        {% if static["answer"]["4_ans"] != "_" %}
+            <form method ="POST" action="/start">
+                <h1>
+                    correct
+                </h1>
+                <input type="submit" style="width:200px;height:70px; 4rem;" value="Play again" name="play_again">
+            </form>
+        {% else %}
+            <form method ="POST" action="/ques">
+                <input type="submit" style="width:80px;height:60px; margin-right: 2rem;" value="A" name="alphabet">
+                <input type="submit" style="width:80px;height:60px; margin-right: 2rem;" value="B" name="alphabet">
+                <input type="submit" style="width:80px;height:60px; margin-right: 2rem;" value="C" name="alphabet">
+                <input type="submit" style="width:80px;height:60px; margin-right: 2rem;" value="D" name="alphabet">
+            </form>
+        {% endif %}
+        </div>
+    </div
+{% endblock %}
